@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lacak Resi – JNP Express</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/tracking.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <style>
+    </style>
+</head>
+
+<body>
+
+    <!-- ============ MOBILE NAV OVERLAY ============ -->
+    <div class="mobile-nav" id="mobileNav">
+        <div class="mobile-nav-panel">
+            <button class="mobile-nav-close" id="mobileNavClose" aria-label="Tutup menu">
+                <i class="fas fa-times"></i>
+            </button>
+            <nav class="mobile-nav-links">
+                <a href="index.html">Beranda</a>
+                <a href="about.html">Tentang</a>
+                <a href="services.html">Layanan</a>
+                <a href="tracking.html" class="active">Lacak Paket</a>
+                
+            </nav>
+            <div class="mobile-nav-buttons">
+                <a href="#kontak" class="btn-primary-trans">Kontak</a>
+                <a href="tracking.html" class="btn-secondary">Cek Resi</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============ HEADER ============ -->
+    <header class="header">
+        <div class="header-inner">
+            <div class="logo">
+                <a href="#">
+                    <img src="images/logo.png" alt="JNP Express Logo">
+                </a>
+            </div>
+
+            <nav class="nav-link">
+                <a href="index.html">Beranda</a>
+                <a href="about.html">Tentang</a>
+                <a href="services.html">Layanan</a>
+                <a href="tracking.html" class="active">Lacak Paket</a>
+                
+            </nav>
+
+            <div class="buttons">
+                <a href="#kontak" class="btn-primary-trans">Kontak</a>
+                <a href="tracking.html" class="btn-secondary">Cek Resi</a>
+            </div>
+
+            <!-- Hamburger button -->
+            <button class="mobile-toggle" id="mobileToggle" aria-label="Buka menu">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- ============ HERO BANNER ============ -->
+    <section class="wrapper-track-hero">
+        <div class="track-hero" data-aos="fade-up">
+            <h1>Lacak Paket Anda<br>dengan Mudah & Cepat</h1>
+            <p>Masukkan nomor resi untuk memantau status pengiriman paket Anda secara real-time.</p>
+        </div>
+    </section>
+
+    <!-- ============ SEARCH BOX ============ -->
+    <div class="track-search-wrapper" data-aos="fade-up">
+        <div class="track-search-card">
+            <label for="resiInput">Nomor Resi Pengiriman</label>
+            <div class="search-input-row">
+                <input type="text" id="resiInput" placeholder="Contoh: JNP2024051200123" autocomplete="off"
+                    maxlength="30" />
+                <button id="trackBtn">
+                    <i class="fas fa-search"></i> Lacak Sekarang
+                </button>
+            </div>
+            <p class="track-hint">
+                Coba resi contoh:
+                <span onclick="demoResi('JNP2024051200123')">JNP2024051200123</span> &nbsp;|&nbsp;
+                <span onclick="demoResi('JNP2024051200456')">JNP2024051200456</span> &nbsp;|&nbsp;
+                <span onclick="demoResi('JNP2024051200789')">JNP2024051200789</span>
+            </p>
+        </div>
+    </div>
+
+    <!-- ============ RESULT AREA ============ -->
+    <section class="wrapper-result">
+        <div style="width:100%;max-width:780px;display:flex;flex-direction:column;gap:20px;">
+
+            <!-- Loading -->
+            <div class="loading-spinner" id="loadingSpinner">
+                <div class="spinner-ring"></div>
+                <p>Sedang mencari data pengiriman...</p>
+            </div>
+
+            <!-- Not Found -->
+            <div class="not-found" id="notFound">
+                <i class="fas fa-box-open"></i>
+                <h3>Nomor Resi Tidak Ditemukan</h3>
+                <p>Resi yang Anda masukkan tidak ditemukan dalam sistem kami.<br>Pastikan nomor resi sudah benar dan
+                    coba kembali.</p>
+            </div>
+
+            <!-- Result -->
+            <div class="result-container" id="resultContainer">
+
+                <!-- Status Banner -->
+                <div class="status-banner" id="statusBanner">
+                    <div class="status-banner-left">
+                        <div class="status-icon-wrap" id="statusIcon"></div>
+                        <div class="status-banner-text">
+                            <h3 id="statusTitle"></h3>
+                            <p id="statusSub"></p>
+                        </div>
+                    </div>
+                    <div class="status-badge" id="statusBadge"></div>
+                </div>
+
+                <!-- Info Grid -->
+                <div class="info-grid">
+                    <div class="info-card">
+                        <div class="info-label"><i class="fas fa-barcode"></i> Nomor Resi</div>
+                        <div class="info-value highlight" id="infoResi">–</div>
+                    </div>
+                    <div class="info-card">
+                        <div class="info-label"><i class="fas fa-box"></i> Layanan</div>
+                        <div class="info-value" id="infoLayanan">–</div>
+                    </div>
+                    <div class="info-card">
+                        <div class="info-label"><i class="fas fa-weight-hanging"></i> Berat</div>
+                        <div class="info-value" id="infoBerat">–</div>
+                    </div>
+                    <div class="info-card">
+                        <div class="info-label"><i class="fas fa-user"></i> Pengirim</div>
+                        <div class="info-value" id="infoPengirim">–</div>
+                    </div>
+                    <div class="info-card">
+                        <div class="info-label"><i class="fas fa-user-check"></i> Penerima</div>
+                        <div class="info-value" id="infoPenerima">–</div>
+                    </div>
+                    <div class="info-card">
+                        <div class="info-label"><i class="fas fa-calendar-check"></i> Est. Tiba</div>
+                        <div class="info-value" id="infoEta">–</div>
+                    </div>
+                </div>
+
+                <!-- Route -->
+                <div class="route-card">
+                    <h4><i class="fas fa-route"></i> Rute Pengiriman</h4>
+                    <div class="route-visual">
+                        <div class="route-point">
+                            <div class="route-dot"></div>
+                            <div class="route-label" id="routeFrom">–</div>
+                            <div class="route-sub">Pengirim</div>
+                        </div>
+                        <div class="route-line"></div>
+                        <div class="route-point">
+                            <div class="route-dot end"></div>
+                            <div class="route-label" id="routeTo">–</div>
+                            <div class="route-sub">Penerima</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Timeline -->
+                <div class="timeline-card">
+                    <h4><i class="fas fa-history"></i> Riwayat Pengiriman</h4>
+                    <div class="timeline" id="timeline"></div>
+                </div>
+
+            </div><!-- /result-container -->
+        </div>
+    </section>
+
+    <!-- ============ FOOTER ============ -->
+    <footer class="footer" id="kontak">
+        <div class="footer-content">
+            <div class="footer-col">
+                <img src="images/logo.png" alt="JNP Express" class="footer-logo">
+                <p>Solusi pengiriman cepat, aman, dan terpercaya untuk kebutuhan individu maupun bisnis di seluruh
+                    Indonesia.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Menu</h4>
+                <ul>
+                    <li><a href="index.html">Beranda</a></li>
+                    <li><a href="about.html">Tentang Kami</a></li>
+                    <li><a href="services.html">Layanan</a></li>
+                    <li><a href="tracking.html">Lacak Paket</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Layanan</h4>
+                <ul>
+                    <li><a href="#">Pengiriman Reguler</a></li>
+                    <li><a href="#">Pengiriman Express</a></li>
+                    <li><a href="#">Cargo Darat &amp; Laut</a></li>
+                    <li><a href="#">Logistik Bisnis</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Kontak</h4>
+                <ul>
+                    <li><i class="fas fa-location-dot"></i> Jakarta, Indonesia</li>
+                    <li><i class="fas fa-phone"></i> +62 812 3456 7890</li>
+                    <li><i class="fas fa-envelope"></i> info@jnpexpress.com</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 JNP Express. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- ============ SCRIPTS ============ -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 1000, once: true });
+    </script>
+    <script src="js/api-tracking.js"></script>
+
+</body>
+
+</html>

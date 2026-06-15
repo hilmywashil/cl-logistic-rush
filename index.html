@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JNP Express</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- ============ MOBILE NAV OVERLAY ============ -->
+    <div class="mobile-nav" id="mobileNav">
+        <div class="mobile-nav-panel">
+            <button class="mobile-nav-close" id="mobileNavClose" aria-label="Tutup menu">
+                <i class="fas fa-times"></i>
+            </button>
+            <nav class="mobile-nav-links">
+                <a href="index.html" class="active">Beranda</a>
+                <a href="about.html">Tentang</a>
+                <a href="services.html">Layanan</a>
+                <a href="tracking.html">Lacak Paket</a>
+
+            </nav>
+            <div class="mobile-nav-buttons">
+                <a href="#kontak" class="btn-primary-trans">Kontak</a>
+                <a href="tracking.html" class="btn-secondary">Cek Resi</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============ HEADER ============ -->
+    <header class="header">
+        <div class="header-inner">
+            <div class="logo">
+                <a href="#">
+                    <img src="images/logo.png" alt="JNP Express Logo">
+                </a>
+            </div>
+
+            <nav class="nav-link">
+                <a href="#" class="active">Beranda</a>
+                <a href="about.html">Tentang</a>
+                <a href="services.html">Layanan</a>
+                <a href="tracking.html">Lacak Paket</a>
+
+            </nav>
+
+            <div class="buttons">
+                <a href="#kontak" class="btn-primary-trans">Kontak</a>
+                <a href="tracking.html" class="btn-secondary">Cek Resi</a>
+            </div>
+
+            <!-- Hamburger button -->
+            <button class="mobile-toggle" id="mobileToggle" aria-label="Buka menu">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- ============ HERO ============ -->
+    <section class="wrapper-image">
+        <div class="hero-section" data-aos="fade-up">
+            <h1>Cepat. Aman. Tepat Waktu.</h1>
+            <p>Solusi logistik terpercaya untuk pengiriman seluruh Indonesia.
+                Dari paket kecil hingga distribusi besar, RUSH LOGISTIK siap mengantar tanpa ribet.</p>
+            <div class="buttons">
+                <a href="tracking.html" class="btn-white">
+                    <i class="fas fa-route" style="margin-right: 10px;"></i> Lacak Pengiriman
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ STATS ============ -->
+    <section class="wrapper-blue">
+        <div class="stats-section" data-aos="fade-up">
+            <div class="stat-item">
+                <h2>10+</h2>
+                <p>Tahun Berpengalaman</p>
+            </div>
+            <div class="stat-item">
+                <h2>500+</h2>
+                <p>Mitra Bisnis</p>
+            </div>
+            <div class="stat-item">
+                <h2>100+</h2>
+                <p>Kota Terjangkau</p>
+            </div>
+            <div class="stat-item">
+                <h2>1M+</h2>
+                <p>Paket Terkirim</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ SERVICES ============ -->
+    <section class="wrapper-gray">
+        <div class="services-section" data-aos="fade-up">
+            <div class="section-title">
+                <h2>Layanan Kami</h2>
+                <p>Menyediakan berbagai layanan pengiriman yang dapat memenuhi kebutuhan logistik Anda.</p>
+            </div>
+            <div class="item-grid">
+                <div class="item">
+                    <i class="fas fa-box-open service-icon"></i>
+                    <div>
+                        <h3>Pengiriman Reguler</h3>
+                        <p>Layanan pengiriman dengan tarif ekonomis untuk kebutuhan distribusi paket sehari-hari ke
+                            berbagai wilayah.</p>
+                    </div>
+                </div>
+                <div class="item">
+                    <i class="fas fa-truck service-icon"></i>
+                    <div>
+                        <h3>Pengiriman Express</h3>
+                        <p>Layanan pengiriman prioritas yang memastikan barang sampai lebih cepat dan tepat waktu.</p>
+                    </div>
+                </div>
+                <div class="item">
+                    <i class="fas fa-ship service-icon"></i>
+                    <div>
+                        <h3>Cargo Darat &amp; Laut</h3>
+                        <p>Solusi pengiriman barang besar dan berat dengan biaya yang efisien melalui jalur darat maupun
+                            laut.</p>
+                    </div>
+                </div>
+                <div class="item">
+                    <i class="fas fa-warehouse service-icon"></i>
+                    <div>
+                        <h3>Logistik Bisnis</h3>
+                        <p>Layanan logistik terpadu yang membantu perusahaan mengelola distribusi barang secara lebih
+                            efektif dan terorganisir.</p>
+                    </div>
+                </div>
+                <div class="item">
+                    <i class="fas fa-handshake service-icon"></i>
+                    <div>
+                        <h3>Kemitraan Usaha</h3>
+                        <p>Program kemitraan strategis untuk bisnis yang membutuhkan solusi pengiriman jangka panjang
+                            dan terintegrasi.</p>
+                    </div>
+                </div>
+                <div class="item">
+                    <i class="fas fa-shield-halved service-icon"></i>
+                    <div>
+                        <h3>Asuransi Pengiriman</h3>
+                        <p>Perlindungan penuh untuk setiap paket yang dikirim agar Anda dapat berkirim dengan tenang dan
+                            aman.</p>
+                    </div>
+                </div>
+            </div>
+            <a href="services.html" class="btn-primary">
+                Lihat Semua Layanan <i class="fa fa-arrow-right" style="margin-left: 10px;"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- ============ WHY ============ -->
+    <section class="wrapper-white">
+        <div class="why-section" data-aos="fade-up">
+            <div class="left">
+                <img src="images/paket-diantar.jpg" alt="Pengiriman paket">
+            </div>
+            <div class="right">
+                <h2>Mengapa Memilih Kami?</h2>
+                <p>Memberikan layanan pengiriman yang aman, cepat, dan terpercaya untuk kebutuhan individu maupun
+                    bisnis.</p>
+                <div class="why-list">
+                    <div class="why-item">
+                        <i class="fas fa-clock"></i>
+                        <span>Pengiriman Cepat dan Tepat Waktu</span>
+                    </div>
+                    <div class="why-item">
+                        <i class="fas fa-route"></i>
+                        <span>Tracking Real-Time</span>
+                    </div>
+                    <div class="why-item">
+                        <i class="fas fa-map"></i>
+                        <span>Jangkauan Luas ke Seluruh Indonesia</span>
+                    </div>
+                    <div class="why-item">
+                        <i class="fas fa-dollar-sign"></i>
+                        <span>Harga Kompetitif</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ CTA ============ -->
+    <section class="wrapper-gray">
+        <div class="cta-section" data-aos="fade-up">
+            <div class="text">
+                <h1>Siap Mengirim Barang Anda Hari Ini?</h1>
+                <p>Percayakan kebutuhan pengiriman paket, dokumen, dan cargo Anda kepada tim profesional kami dengan
+                    layanan yang cepat, aman, dan terpercaya.</p>
+            </div>
+            <div class="buttons">
+                <a href="tracking.html" class="btn-primary">
+                    <i class="fas fa-route" style="margin-right: 10px;"></i> Lacak Pengiriman
+                </a>
+                <a href="#kontak" class="btn-secondary">
+                    <i class="fas fa-phone" style="margin-right: 10px;"></i> Hubungi Kami
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ FOOTER ============ -->
+    <footer class="footer" id="kontak">
+        <div class="footer-content">
+            <div class="footer-col">
+                <img src="images/logo.png" alt="JNP Express" class="footer-logo">
+                <p>Solusi pengiriman cepat, aman, dan terpercaya untuk kebutuhan individu maupun bisnis di seluruh
+                    Indonesia.</p>
+            </div>
+
+            <div class="footer-col">
+                <h4>Menu</h4>
+                <ul>
+                    <li><a href="#">Beranda</a></li>
+                    <li><a href="#">Tentang Kami</a></li>
+                    <li><a href="#">Layanan</a></li>
+                    <li><a href="#">Kontak</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Layanan</h4>
+                <ul>
+                    <li><a href="#">Pengiriman Reguler</a></li>
+                    <li><a href="#">Pengiriman Express</a></li>
+                    <li><a href="#">Cargo Darat &amp; Laut</a></li>
+                    <li><a href="#">Logistik Bisnis</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Kontak</h4>
+                <ul>
+                    <li>
+                        <i class="fas fa-location-dot"></i>
+                        Jakarta, Indonesia
+                    </li>
+                    <li>
+                        <i class="fas fa-phone"></i>
+                        +62 812 3456 7890
+                    </li>
+                    <li>
+                        <i class="fas fa-envelope"></i>
+                        info@jnpexpress.com
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2026 JNP Express. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- ============ SCRIPTS ============ -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // AOS Init
+        AOS.init({
+            duration: 1000,
+            once: true
+        });
+
+        // Mobile Nav
+        const mobileToggle = document.getElementById('mobileToggle');
+        const mobileNav = document.getElementById('mobileNav');
+        const mobileNavClose = document.getElementById('mobileNavClose');
+
+        function openNav() {
+            mobileNav.style.display = 'block';
+            document.body.style.overflow = 'hidden';
+            // Trigger reflow for transition
+            requestAnimationFrame(() => {
+                mobileNav.classList.add('open');
+            });
+        }
+
+        function closeNav() {
+            mobileNav.classList.remove('open');
+            document.body.style.overflow = '';
+            mobileNav.addEventListener('transitionend', () => {
+                if (!mobileNav.classList.contains('open')) {
+                    mobileNav.style.display = 'none';
+                }
+            }, { once: true });
+        }
+
+        mobileToggle.addEventListener('click', openNav);
+        mobileNavClose.addEventListener('click', closeNav);
+
+        // Close on overlay click (outside panel)
+        mobileNav.addEventListener('click', (e) => {
+            if (e.target === mobileNav) closeNav();
+        });
+
+        // Close nav on mobile link click
+        document.querySelectorAll('.mobile-nav-links a').forEach(link => {
+            link.addEventListener('click', closeNav);
+        });
+
+        // Active nav link highlight on scroll (optional enhancement)
+        const sections = document.querySelectorAll('section');
+        const navLinks = document.querySelectorAll('.nav-link a, .mobile-nav-links a');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 120;
+                if (window.scrollY >= sectionTop) {
+                    current = section.getAttribute('id') || '';
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (current && link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+
+</body>
+
+</html>

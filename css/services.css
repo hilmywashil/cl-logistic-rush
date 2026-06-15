@@ -1,0 +1,458 @@
+/* =============================================
+   JNP EXPRESS - SERVICES PAGE STYLESHEET
+   Extends style.css — import style.css first
+   ============================================= */
+
+/* =============================================
+   PAGE HERO
+   ============================================= */
+
+.page-hero {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 100px 24px;
+    background-image:
+        linear-gradient(135deg, rgba(30, 51, 120, 0.92) 0%, rgba(30, 51, 120, 0.75) 100%),
+        url('../images/hero-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    overflow: hidden;
+}
+
+.page-hero::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    background: var(--gray);
+    clip-path: polygon(0 60%, 100% 0, 100% 100%, 0 100%);
+}
+
+.page-hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+    width: 100%;
+    max-width: 1300px;
+    color: var(--light);
+}
+
+.page-hero-content .breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    font-weight: 500;
+    opacity: 0.8;
+}
+
+.page-hero-content .breadcrumb a {
+    color: var(--light);
+    text-decoration: none;
+    transition: opacity 0.2s;
+}
+
+.page-hero-content .breadcrumb a:hover {
+    opacity: 1;
+}
+
+.page-hero-content .breadcrumb i {
+    font-size: 10px;
+    opacity: 0.6;
+}
+
+.page-hero-content h1 {
+    font-size: 44px;
+    font-weight: 700;
+    line-height: 1.15;
+    max-width: 620px;
+}
+
+.page-hero-content p {
+    font-size: 15px;
+    line-height: 1.7;
+    opacity: 0.85;
+    max-width: 500px;
+}
+
+/* =============================================
+   SERVICES LIST SECTION
+   ============================================= */
+
+.services-full-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+    width: 100%;
+    max-width: 1300px;
+}
+
+/* Main 2-col grid (same pattern as index) */
+.services-full-section .item-grid {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+}
+
+.services-full-section .item-grid .item {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: var(--light);
+    padding: 34px 30px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    border-radius: 12px;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-left: 4px solid transparent;
+}
+
+.services-full-section .item-grid .item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 14px 36px rgba(0, 0, 0, 0.13);
+    border-left-color: var(--primary);
+}
+
+/* Subtle number watermark */
+.services-full-section .item-grid .item .item-number {
+    position: absolute;
+    top: 12px;
+    right: 18px;
+    font-size: 52px;
+    font-weight: 900;
+    color: rgba(30, 51, 120, 0.05);
+    line-height: 1;
+    pointer-events: none;
+    user-select: none;
+}
+
+.services-full-section .item-grid img {
+    width: 72px;
+    height: 72px;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+
+.services-full-section .item-grid .item-text h3 {
+    font-size: 19px;
+    color: var(--primary);
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.services-full-section .item-grid .item-text p {
+    color: #555;
+    font-size: 14px;
+    line-height: 1.7;
+    margin-bottom: 12px;
+}
+
+.services-full-section .item-grid .item-text .item-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.services-full-section .item-grid .item-text .item-tags span {
+    background: rgba(30, 51, 120, 0.07);
+    color: var(--primary);
+    font-size: 12px;
+    font-weight: 600;
+    padding: 4px 12px;
+    border-radius: 100px;
+}
+
+/* =============================================
+   ALUR PENGIRIMAN (PROCESS FLOW)
+   ============================================= */
+
+.alur-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 60px;
+    width: 100%;
+    max-width: 1300px;
+}
+
+/* Horizontal flow strip */
+.alur-flow {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 40px 1fr 40px 1fr 40px 1fr;
+    align-items: center;
+    gap: 0;
+}
+
+/* Step card */
+.alur-step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 18px;
+    padding: 36px 20px;
+    background: var(--light);
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.07);
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: default;
+}
+
+.alur-step:hover {
+    transform: translateY(-6px);
+}
+
+
+/* Step number badge */
+.alur-step .step-num {
+    position: absolute;
+    top: -16px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 34px;
+    height: 34px;
+    background: var(--primary);
+    color: var(--light);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    font-weight: 800;
+    box-shadow: 0 4px 12px rgba(30, 51, 120, 0.3);
+    border: 2px solid var(--light);
+}
+
+/* Icon circle */
+.alur-step .step-icon {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: rgba(30, 51, 120, 0.08);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 32px;
+    color: var(--primary);
+    margin-top: 10px;
+    transition: background 0.3s ease, color 0.3s ease;
+    flex-shrink: 0;
+}
+
+.alur-step h4 {
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--primary);
+}
+
+.alur-step p {
+    font-size: 13.5px;
+    color: #666;
+    line-height: 1.65;
+}
+
+/* Detail list inside step */
+.alur-step .step-details {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    width: 100%;
+    margin-top: 4px;
+}
+
+.alur-step .step-details li {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    color: #555;
+}
+
+.alur-step .step-details li i {
+    color: var(--secondary);
+    font-size: 11px;
+    flex-shrink: 0;
+}
+
+/* Arrow connector between steps */
+.alur-arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary);
+    opacity: 0.35;
+    font-size: 22px;
+}
+
+/* =============================================
+   CTA SECTION
+   ============================================= */
+
+.services-cta-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 700px;
+    gap: 36px;
+    text-align: center;
+}
+
+.services-cta-section .text h2 {
+    font-size: 34px;
+    color: var(--primary);
+    line-height: 1.25;
+    font-weight: 700;
+    margin-bottom: 14px;
+}
+
+.services-cta-section .text p {
+    font-size: 14px;
+    line-height: 1.75;
+    color: #555;
+}
+
+.services-cta-section .buttons {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* =============================================
+   RESPONSIVE
+   ============================================= */
+
+/* ---- max 1100px ---- */
+@media (max-width: 1100px) {
+    .page-hero-content h1 {
+        font-size: 36px;
+    }
+
+    /* Flow: collapse to 2×2 grid */
+    .alur-flow {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto auto;
+        gap: 50px 30px;
+    }
+
+    /* Hide horizontal arrows */
+    .alur-arrow {
+        display: none;
+    }
+
+    /* Show relative connector line between rows */
+    .alur-step {
+        padding: 40px 24px 32px;
+    }
+}
+
+/* ---- max 900px ---- */
+@media (max-width: 900px) {
+    .page-hero {
+        padding: 80px 24px 100px;
+    }
+
+    .page-hero-content h1 {
+        font-size: 30px;
+    }
+
+    .page-hero-content p {
+        font-size: 14px;
+    }
+
+    /* Services grid: 1 column */
+    .services-full-section .item-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Alur: already 2 cols, keep it */
+    .alur-flow {
+        gap: 40px 20px;
+    }
+}
+
+/* ---- max 600px ---- */
+@media (max-width: 600px) {
+    .page-hero {
+        padding: 60px 16px 90px;
+    }
+
+    .page-hero-content h1 {
+        font-size: 24px;
+    }
+
+    .page-hero-content p {
+        font-size: 13px;
+    }
+
+    /* Services item: stack icon on top */
+    .services-full-section .item-grid .item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+        padding: 28px 22px;
+    }
+
+    /* Alur: single column */
+    .alur-flow {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+
+    .alur-step {
+        padding: 38px 20px 28px;
+    }
+
+    /* CTA */
+    .services-cta-section .text h2 {
+        font-size: 24px;
+    }
+
+    .services-cta-section .buttons {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .services-cta-section .buttons a {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+/* ---- max 400px ---- */
+@media (max-width: 400px) {
+    .page-hero-content h1 {
+        font-size: 20px;
+    }
+
+    .services-cta-section .text h2 {
+        font-size: 20px;
+    }
+
+    .alur-step .step-icon {
+        width: 66px;
+        height: 66px;
+        font-size: 26px;
+    }
+
+    .alur-step h4 {
+        font-size: 15px;
+    }
+}
